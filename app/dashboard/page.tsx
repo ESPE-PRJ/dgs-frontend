@@ -166,8 +166,28 @@ export default function Dashboard() {
                     </button>
                   </>
                 )}
+                {user.role === 'Doctor' && (
+                  <>
+                    <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                      <span className="material-icons text-blue-500 mr-3">people</span>
+                      <span className="text-gray-700">Patient Records</span>
+                    </button>
+                    <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                      <span className="material-icons text-blue-500 mr-3">healing</span>
+                      <span className="text-gray-700">New Treatment</span>
+                    </button>
+                    <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                      <span className="material-icons text-blue-500 mr-3">medication</span>
+                      <span className="text-gray-700">Prescriptions</span>
+                    </button>
+                  </>
+                )}
                 {user.role === 'Patient' && (
                   <>
+                    <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+                      <span className="material-icons text-blue-500 mr-3">healing</span>
+                      <span className="text-gray-700">My Treatments</span>
+                    </button>
                     <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                       <span className="material-icons text-blue-500 mr-3">medication</span>
                       <span className="text-gray-700">My Medications</span>
@@ -175,10 +195,6 @@ export default function Dashboard() {
                     <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
                       <span className="material-icons text-blue-500 mr-3">event</span>
                       <span className="text-gray-700">Appointments</span>
-                    </button>
-                    <button className="flex items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
-                      <span className="material-icons text-blue-500 mr-3">folder_shared</span>
-                      <span className="text-gray-700">Health Records</span>
                     </button>
                   </>
                 )}
