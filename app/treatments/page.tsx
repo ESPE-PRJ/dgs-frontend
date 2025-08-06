@@ -74,6 +74,7 @@ const mockTreatments: Treatment[] = [
 export default function Treatments() {
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const [treatments, setTreatments] = useState<Treatment[]>(mockTreatments);
   const [showNewTreatmentForm, setShowNewTreatmentForm] = useState(false);
   const [selectedPatient, setSelectedPatient] = useState('');
@@ -88,12 +89,15 @@ export default function Treatments() {
   });
 
   useEffect(() => {
-    const userData = localStorage.getItem('user');
-    if (!userData) {
-      router.push('/login');
-      return;
+    if (typeof window !== 'undefined') {
+      const userData = localStorage.getItem('user');
+      if (!userData) {
+        router.push('/login');
+        return;
+      }
+      setUser(JSON.parse(userData));
     }
-    setUser(JSON.parse(userData));
+    setIsLoading(false);
   }, [router]);
 
   const handleAddScheduleTime = () => {
@@ -148,7 +152,7 @@ export default function Treatments() {
     setSelectedPatient('');
   };
 
-  if (!user) {
+  if (isLoading || !user) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-100">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
