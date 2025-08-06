@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import InputField from '../components/InputField';
 
-// Datos quemados para autenticación - tres usuarios
+// Datos quemados para autenticación - cuatro usuarios
 const VALID_USERS = [
   {
     username: 'admin',
@@ -23,6 +23,12 @@ const VALID_USERS = [
     password: 'medico',
     role: 'Doctor',
     email: 'medico@pharmalink.com'
+  },
+  {
+    username: 'cuidador',
+    password: 'cuidador',
+    role: 'Caregiver',
+    email: 'cuidador@pharmalink.com'
   }
 ];
 
@@ -84,6 +90,7 @@ export default function LoginPage() {
             <p><strong>Admin:</strong> admin/admin (Administrator role)</p>
             <p><strong>Patient:</strong> paciente/paciente (Patient role)</p>
             <p><strong>Doctor:</strong> medico/medico (Doctor role)</p>
+            <p><strong>Caregiver:</strong> cuidador/cuidador (Caregiver role)</p>
             <p className="text-blue-500 font-medium mt-2">Role is automatically detected</p>
           </div>
         </div>

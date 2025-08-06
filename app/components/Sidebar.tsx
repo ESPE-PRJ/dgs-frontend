@@ -11,7 +11,9 @@ export default function Sidebar({ currentPage = 'Home', userRole = 'Administrato
   const router = useRouter();
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('user');
+    }
     router.push('/login');
   };
 
@@ -37,7 +39,8 @@ export default function Sidebar({ currentPage = 'Home', userRole = 'Administrato
         { name: 'Treatments', icon: 'healing', href: '/treatments' },
         { name: 'Meds', icon: 'medication', href: '/medications' },
         { name: 'Reports', icon: 'assessment', href: '/reports' },
-        { name: 'Schedule', icon: 'event', href: '/schedule' }
+        { name: 'Schedule', icon: 'event', href: '/schedule' },
+        { name: 'Settings', icon: 'settings', href: '/settings' }
       ];
     } else if (userRole === 'Patient') {
       return [
@@ -46,7 +49,16 @@ export default function Sidebar({ currentPage = 'Home', userRole = 'Administrato
         { name: 'My Meds', icon: 'medication', href: '/my-medications' },
         { name: 'Appointments', icon: 'event', href: '/appointments' },
         { name: 'Health Records', icon: 'folder_shared', href: '/health-records' },
-        { name: 'Profile', icon: 'person', href: '/profile' }
+        { name: 'Settings', icon: 'settings', href: '/settings' }
+      ];
+    } else if (userRole === 'Caregiver') {
+      return [
+        ...baseItems,
+        { name: 'My Patients', icon: 'people', href: '/my-patients' },
+        { name: 'Alerts', icon: 'notifications_active', href: '/alerts' },
+        { name: 'Patient Care', icon: 'healing', href: '/patient-care' },
+        { name: 'Reports', icon: 'assessment', href: '/caregiver-reports' },
+        { name: 'Settings', icon: 'settings', href: '/settings' }
       ];
     }
 
