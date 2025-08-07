@@ -44,7 +44,7 @@ export default function Dashboard() {
           <h1 className="text-2xl font-bold text-gray-800">Dashboard</h1>
           <div className="ml-auto flex items-center space-x-4">
             <div className="text-sm">
-              <span className="text-gray-600">Welcome, </span>
+              <span className="text-gray-600">Bienvenido, </span>
               <span className="font-medium text-gray-900">{user.username}</span>
               <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                 {user.role}
@@ -73,7 +73,7 @@ export default function Dashboard() {
                   <div className="ml-5 w-0 flex-1">
                     <dl>
                       <dt className="text-sm font-medium text-gray-500 truncate">
-                        Your Role
+                        Tu Rol
                       </dt>
                       <dd className="text-lg font-medium text-gray-900">
                         {user.role}
@@ -368,7 +368,7 @@ export default function Dashboard() {
           {/* Recent Activity */}
           <div className="bg-white shadow rounded-lg">
             <div className="px-6 py-5 border-b border-gray-200">
-              <h3 className="text-lg font-medium text-gray-900">Recent Activity</h3>
+              <h3 className="text-lg font-medium text-gray-900">Actividad Reciente</h3>
             </div>
             <div className="p-6">
               <div className="flow-root">
@@ -383,12 +383,12 @@ export default function Dashboard() {
                       <div className="flex-1 min-w-0">
                         <div>
                           <div className="text-sm text-gray-500 flex justify-between">
-                            <span className="font-medium text-gray-900">Login successful</span>
-                            <span className="whitespace-nowrap">2 minutes ago</span>
+                            <span className="font-medium text-gray-900">Login exitoso</span>
+                            <span className="whitespace-nowrap">hace 2 minutos</span>
                           </div>
                         </div>
                         <div className="mt-2 text-sm text-gray-700">
-                          <p>Successfully logged in as {user.role}</p>
+                          <p>Has iniciado sesión como {user.role}</p>
                         </div>
                       </div>
                     </div>
