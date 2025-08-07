@@ -73,10 +73,17 @@ export default function LoginPage() {
   return (
     <div className="bg-gray-100 flex items-center justify-center min-h-screen">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
-          PharmaLink
-        </h1>
-        
+        <div className="flex items-center justify-center mb-8 space-x-4">
+  <img 
+    src="/logo.png" 
+    alt="PharmaLink Logo" 
+    className="w-12 h-12 object-contain"
+  />
+  <h1 className="text-3xl font-bold text-gray-800">
+    PharmaLink
+  </h1>
+</div>
+
         {error && (
           <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
             {error}
